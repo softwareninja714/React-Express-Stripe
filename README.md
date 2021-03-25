@@ -1,36 +1,46 @@
-# Minimal Boilerplate for Stripe used in React and Express
+# Stripe Server Checkout with React and Express
+
+## SCA ready Tutorials: 
+  - [Stripe Server Checkout](https://stripe.com/docs/payments/checkout/server#create-one-time-payments)
+  - [Stripe Webhook Fulfillment](https://stripe.com/docs/payments/checkout/fulfillment#webhooks)
 
 ## Installation
 
-* `git clone`
-* `cd react-express-stripe`
+- `git clone`
+- `cd react-express-stripe`
 
-## Installation: Stripe Registration and API Keys
+**Important:** Setup works only with backend hosted somewhere reachable via an IP or domain. Stripe's Webhooks are not going to work on a localhost backend. The frontend application can run locally though.
 
-* Register at [Stripe](https://stripe.com/) and Setup a Payment Account to access the Dashboard
-* Find your API Keys (test_, live_)
-* Replace frontend API keys: frontend/src/constants
-* Replace backend APIU keys: server/constants/
+### Stripe Registration and API Keys
 
-## Installation: Frontend
+- Register at [Stripe](https://stripe.com/) and Setup a Payment Account to access the Dashboard
+- Find your API Keys:
+- Replace frontend 
+  - API keys: `YOUR_STRIPE_PUBLIC_KEY`
+- Replace backend 
+  - API keys: `YOUR_STRIPE_SECRET_KEY`
+  - Webhook secret: `YOUR_STRIPE_WEBHOOK_SECRET`
+    - needs a [Webhook setup on your Stripe dashboard](https://stripe.com/docs/payments/checkout/fulfillment#webhooks)
 
-* `cd frontend`
-* `npm install`
-* `npm start`
-* visit http://localhost:3000/
+### Frontend
 
-## Installation: Backend
+- `cd frontend`
+- `npm install`
+- `npm start`
+- visit http://localhost:3000/
 
-* `cd backend`
-* `npm install`
-* `node index.js`
-* visit http://localhost:8080/
+### Backend
+
+- `cd backend`
+- `npm install`
+- `npm start`
+- visit http://localhost:8888/
 
 ## Usage
 
 When using it in production, you have to use a real credit card. Otherwise, in development mode, you can use a [Stripe's test credit cards](https://stripe.com/docs/testing#cards):
 
-* Email: Any Email
-* Number: 4242 4242 4242 4242
-* Date: Any Date in the Future
-* CVC: Any 3 Numbers
+- Email: Any Email
+- Number: 4242 4242 4242 4242
+- Date: Any Date in the Future
+- CVC: Any 3 Numbers
